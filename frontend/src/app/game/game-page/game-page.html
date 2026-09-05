@@ -1,0 +1,42 @@
+<div class="game-page">
+  <header class="game-header">
+    <h1>Tic Tac Toe</h1>
+    <app-mode-selector [mode]="state.gameState()?.mode ?? 'TwoPlayer'" (modeChange)="onModeChange($event)" />
+  </header>
+
+  @if (state.errorMessage(); as error) {
+    <p class="error">{{ error }}</p>
+  }
+
+  @if (state.gameState(); as game) {
+    <app-status-bar
+      [currentPlayer]="game.currentPlayer"
+      [mode]="game.mode"
+      [status]="game.status"
+      [winner]="game.winner"
+    />
+
+    <div class="game-layout">
+      <app-board
+        [board]="game.board"
+        [winningCells]="game.winningCells"
+        [disabled]="!state.canPlay()"
+        (cellClick)="onCellClick($event)"
+      />
+
+      <aside class="side-panel">
+        <app-scoreboard-panel [scoreboard]="game.scoreboard" />
+        <app-move-history [moves]="game.moveHistory" />
+      </aside>
+    </div>
+
+    <app-game-controls
+      [canUndo]="state.canUndo()"
+      (resetGame)="state.resetGame()"
+      (undo)="state.undo()"
+      (resetScoreboard)="state.resetScoreboard()"
+    />
+  } @else {
+    <p>Loading game…</p>
+  }
+</div>

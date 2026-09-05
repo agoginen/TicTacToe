@@ -1,0 +1,25 @@
+.scoreboard {
+  min-width: 160px;
+}
+
+.scoreboard h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.scoreboard dl {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.25rem 1rem;
+  margin: 0;
+}
+
+.scoreboard dt {
+  color: #475569;
+}
+
+.scoreboard dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}

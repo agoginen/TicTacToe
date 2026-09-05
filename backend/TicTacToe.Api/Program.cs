@@ -37,9 +37,15 @@ if (app.Environment.IsDevelopment())
     app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
 }
 
-app.UseHttpsRedirection();
-
 app.UseCors(AngularDevCorsPolicy);
+
+// Skipped in Development: the Angular dev server calls the plain HTTP port directly,
+// and redirecting POST/PUT/DELETE requests to HTTPS breaks CORS (browsers refuse to
+// follow redirects for requests that required a preflight).
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 

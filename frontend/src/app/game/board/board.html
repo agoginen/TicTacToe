@@ -1,0 +1,13 @@
+<div class="board">
+  @for (row of [0, 1, 2]; track row) {
+    @for (col of [0, 1, 2]; track col) {
+      <button
+        type="button"
+        class="cell"
+        [class.winning]="isWinningCell(row * 3 + col)"
+        [disabled]="disabled() || board()[row * 3 + col] !== null"
+        (click)="onCellClick(row, col)"
+      >{{ board()[row * 3 + col] }}</button>
+    }
+  }
+</div>

@@ -1,0 +1,4 @@
+<div class="status-bar">
+  <span class="mode">Mode: {{ modeLabel() }}</span>
+  <span class="message" [class.won]="status() === 'Won'" [class.draw]="status() === 'Draw'">{{ message() }}</span>
+</div>

@@ -1,0 +1,26 @@
+.move-history {
+  min-width: 220px;
+}
+
+.move-history h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.move-history table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.move-history th,
+.move-history td {
+  border: 1px solid #e2e8f0;
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+}
+
+.empty {
+  color: #64748b;
+  font-size: 0.9rem;
+}

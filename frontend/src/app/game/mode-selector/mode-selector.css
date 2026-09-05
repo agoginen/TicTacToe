@@ -1,0 +1,18 @@
+.mode-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mode-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.mode-button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}

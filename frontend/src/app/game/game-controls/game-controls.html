@@ -1,0 +1,5 @@
+<div class="game-controls">
+  <button type="button" (click)="resetGame.emit()">Reset Game</button>
+  <button type="button" [disabled]="!canUndo()" (click)="undo.emit()">Undo Last Move</button>
+  <button type="button" class="secondary" (click)="resetScoreboard.emit()">Reset Scoreboard</button>
+</div>
