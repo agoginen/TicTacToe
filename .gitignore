@@ -48,6 +48,15 @@ Generated\ Files/
 # NUnit
 *.VisualState.xml
 TestResult.xml
+
+# Ignore all markdown files except README.md
+*.md
+!README.md
+
+# Never push Microsoft Word documents
+*.doc
+*.docx
+
 nunit-*.xml
 
 # Build Results of an ATL Project
